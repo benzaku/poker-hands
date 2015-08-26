@@ -128,15 +128,28 @@ public class PokerHandTest {
 
 	@Test
 	public void getCombinationTest() {
-//		assertEquals("HighCard", highCard.getCombination());
-//		assertEquals("Pair", pair.getCombination());
-//		assertEquals("TowPairs", twoPairs.getCombination());
-//		assertEquals("ThreeOfAKind", threeOfAKind.getCombination());
-//		assertEquals("Straight", straight.getCombination());
-//		assertEquals("Flush", flush.getCombination());
-//		assertEquals("FullHouse", fullHouse.getCombination());
+		assertEquals("HighCard", highCard.getCombination());
+		assertEquals("Pair", pair.getCombination());
+		assertEquals("TwoPairs", twoPairs.getCombination());
+		assertEquals("ThreeOfAKind", threeOfAKind.getCombination());
+		assertEquals("Straight", straight.getCombination());
+		assertEquals("Flush", flush.getCombination());
+		assertEquals("FullHouse", fullHouse.getCombination());
 		assertEquals("FourOfAKind", fourOfAKind.getCombination());
 		assertEquals("StraightFlush", straightFlush.getCombination());
 	}
-
+	
+	@Test
+	public void compareTest() {
+		assertTrue(highCard.compareTo(pair) < 0);
+		assertTrue(pair.compareTo(twoPairs) < 0);
+		assertTrue(twoPairs.compareTo(threeOfAKind) < 0);
+		assertTrue(threeOfAKind.compareTo(straight) < 0);
+		assertTrue(straight.compareTo(flush) < 0);
+		assertTrue(flush.compareTo(fullHouse) < 0);
+		assertTrue(fullHouse.compareTo(fourOfAKind) < 0);
+		assertTrue(fourOfAKind.compareTo(straightFlush) < 0);
+		
+		assertTrue(highCard.compareTo(straightFlush) < 0);
+	}
 }
