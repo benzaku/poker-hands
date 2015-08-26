@@ -8,6 +8,10 @@ import com.flaregame.interview.pokerhands.exception.PokerValueNotValidException;
 public class PokerHand {
 	private static final int NUMBER_CARDS = 5;
 	private PokerCard[] cards = null;
+	public static final String[] COMBINATION = { "HighCard", "Pair", "TwoPairs", "ThreeOfAKind", "Straight", "Flush",
+			"FullHouse", "FourOfAKind", "StraightFlush" };
+	
+	private String combination = "unknown";
 
 	public PokerHand(PokerCard[] cards) throws InvalidPokerCardsRowException, PokerValueNotValidException {
 		// check cards .
@@ -22,13 +26,16 @@ public class PokerHand {
 			if (cards[i] == null) {
 				throw new PokerCardsRowContainsInvalidElementException();
 			} else {
-				this.cards[i] = new PokerCard(cards[i].getSuit(),
-						new PokerValue(cards[i].getValue().getValue()));
+				this.cards[i] = new PokerCard(cards[i].getSuit(), new PokerValue(cards[i].getValue().getValue()));
 			}
 		}
 	}
 
 	public PokerCard[] getCards() {
 		return cards;
+	}
+
+	public String getCombination() {
+		return combination;
 	}
 }
