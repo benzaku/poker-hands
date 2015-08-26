@@ -1,9 +1,12 @@
 package com.flaregame.interview.pokerhands;
 
+import java.util.Arrays;
+
 import com.flaregame.interview.pokerhands.exception.InvalidPokerCardsRowException;
 import com.flaregame.interview.pokerhands.exception.PokerCardsRowContainsInvalidElementException;
 import com.flaregame.interview.pokerhands.exception.PokerCardsRowWrongSizeException;
 import com.flaregame.interview.pokerhands.exception.PokerValueNotValidException;
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 public class PokerHand {
 	private static final int NUMBER_CARDS = 5;
@@ -29,6 +32,7 @@ public class PokerHand {
 				this.cards[i] = new PokerCard(cards[i].getSuit(), new PokerValue(cards[i].getValue().getValue()));
 			}
 		}
+		Arrays.sort(this.cards);
 	}
 
 	public PokerCard[] getCards() {
@@ -36,6 +40,9 @@ public class PokerHand {
 	}
 
 	public String getCombination() {
-		return combination;
+		if (this.combination.equals("unknown")){
+			this.combination = PokerHandHelper.getPokerHandCombination(this);
+		}
+		return this.combination;
 	}
 }

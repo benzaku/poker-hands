@@ -1,6 +1,6 @@
 package com.flaregame.interview.pokerhands;
 
-public class PokerCard {
+public class PokerCard implements Comparable<PokerCard>{
 	private PokerSuit suit = null;
 	private PokerValue value = null;
 
@@ -22,5 +22,10 @@ public class PokerCard {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public int compareTo(PokerCard pc) {
+		return this.value.compareTo(pc.getValue());
 	}
 }
