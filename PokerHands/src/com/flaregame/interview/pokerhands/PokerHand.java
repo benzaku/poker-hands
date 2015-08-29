@@ -14,6 +14,9 @@ public class PokerHand implements Comparable<PokerHand> {
 
 	private String combination = "unknown";
 
+	public PokerHand() {
+	}
+
 	public PokerHand(PokerCard[] cards) throws InvalidPokerCardsRowException,
 			PokerValueNotValidException {
 		// check cards .
@@ -23,15 +26,13 @@ public class PokerHand implements Comparable<PokerHand> {
 		if (cards.length != 5) {
 			throw new PokerCardsRowWrongSizeException();
 		}
-		this.cards = new PokerCard[NUMBER_CARDS];
-		for (int i = 0; i < 5; i++) {
-			if (cards[i] == null) {
+		for (PokerCard card : cards) {
+			if (card == null) {
 				throw new PokerCardsRowContainsInvalidElementException();
-			} else {
-				this.cards[i] = new PokerCard(cards[i].getSuit(),
-						new PokerValue(cards[i].getValue().getValue()));
 			}
 		}
+
+		this.cards = cards.clone();
 		Arrays.sort(this.cards);
 	}
 
@@ -63,6 +64,20 @@ public class PokerHand implements Comparable<PokerHand> {
 			e.printStackTrace();
 		}
 		return res;
+	}
+	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("{");
+		for (int i = 0; i < 5; i ++) {
+			if (i != 4) {
+				sb.append(this.cards[i].toString() + ", ");
+			} else {
+				sb.append(this.cards[i].toString() );
+			}
+		}
+		sb.append("}");
+		return sb.toString();
 	}
 
 }

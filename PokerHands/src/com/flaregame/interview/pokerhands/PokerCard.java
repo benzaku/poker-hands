@@ -1,9 +1,17 @@
 package com.flaregame.interview.pokerhands;
 
 public class PokerCard implements Comparable<PokerCard> {
-	private PokerSuit suit = null;
-	private PokerValue value = null;
+	private PokerSuit suit = PokerSuit.SPADE; // default;
+	private PokerValue value = new PokerValue();
 
+	public PokerCard() {
+	}
+	
+	public PokerCard(PokerSuit suit, String value) {
+		this.suit = suit;
+		this.value.setValue(value);
+	}
+	
 	public PokerCard(PokerSuit suit, PokerValue value) {
 		this.suit = suit;
 		this.value = value;
@@ -12,9 +20,17 @@ public class PokerCard implements Comparable<PokerCard> {
 	public PokerSuit getSuit() {
 		return suit;
 	}
+	
+	public void setSuit(PokerSuit suit) {
+		this.suit = suit;
+	}
 
 	public PokerValue getValue() {
 		return value;
+	}
+	
+	public void setValue(PokerValue value) {
+		this.value.setValue(value.getValue());
 	}
 
 	public boolean equalsTo(PokerCard card) {
@@ -28,5 +44,11 @@ public class PokerCard implements Comparable<PokerCard> {
 	@Override
 	public int compareTo(PokerCard pc) {
 		return this.value.compareTo(pc.getValue());
+	}
+	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.suit.toString() + ":" + this.value.getValue());
+		return sb.toString();
 	}
 }

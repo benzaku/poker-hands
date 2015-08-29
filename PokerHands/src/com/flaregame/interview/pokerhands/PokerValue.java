@@ -19,6 +19,10 @@ public class PokerValue implements Comparable<PokerValue> {
 
 	private String value = "2"; // default value is 2;
 
+	public PokerValue(){
+		
+	}
+	
 	public PokerValue(String value) throws PokerValueNotValidException {
 		if (!isValid(value)) {
 			throw new PokerValueNotValidException();
@@ -37,6 +41,10 @@ public class PokerValue implements Comparable<PokerValue> {
 
 	public String getValue() {
 		return this.value;
+	}
+	
+	public void setValue(String value) {
+		this.value = value;
 	}
 
 	@Override
