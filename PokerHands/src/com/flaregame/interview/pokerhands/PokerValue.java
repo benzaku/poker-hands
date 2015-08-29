@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 import com.flaregame.interview.pokerhands.exception.PokerValueNotValidException;
 
-public class PokerValue implements Comparable<PokerValue>{
+public class PokerValue implements Comparable<PokerValue> {
 
 	public static final String[] VALID_VALUES = { "2", "3", "4", "5", "6", "7",
 			"8", "9", "10", "J", "Q", "K", "A" };
@@ -17,7 +17,7 @@ public class PokerValue implements Comparable<PokerValue>{
 		}
 	}
 
-	private String value = "2";			// default value is 2;
+	private String value = "2"; // default value is 2;
 
 	public PokerValue(String value) throws PokerValueNotValidException {
 		if (!isValid(value)) {
@@ -41,7 +41,7 @@ public class PokerValue implements Comparable<PokerValue>{
 
 	@Override
 	public int compareTo(PokerValue pv) {
-		
+
 		return VALUE_MAP.get(this.value) - VALUE_MAP.get(pv.getValue());
 	}
 }

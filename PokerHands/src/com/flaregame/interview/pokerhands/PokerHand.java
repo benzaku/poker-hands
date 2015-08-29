@@ -8,13 +8,14 @@ import com.flaregame.interview.pokerhands.exception.PokerCardsRowWrongSizeExcept
 import com.flaregame.interview.pokerhands.exception.PokerHandComparisonNotSameCombinationException;
 import com.flaregame.interview.pokerhands.exception.PokerValueNotValidException;
 
-public class PokerHand implements Comparable<PokerHand>{
+public class PokerHand implements Comparable<PokerHand> {
 	private static final int NUMBER_CARDS = 5;
 	private PokerCard[] cards = null;
-	
+
 	private String combination = "unknown";
 
-	public PokerHand(PokerCard[] cards) throws InvalidPokerCardsRowException, PokerValueNotValidException {
+	public PokerHand(PokerCard[] cards) throws InvalidPokerCardsRowException,
+			PokerValueNotValidException {
 		// check cards .
 		if (cards == null) {
 			throw new InvalidPokerCardsRowException();
@@ -27,7 +28,8 @@ public class PokerHand implements Comparable<PokerHand>{
 			if (cards[i] == null) {
 				throw new PokerCardsRowContainsInvalidElementException();
 			} else {
-				this.cards[i] = new PokerCard(cards[i].getSuit(), new PokerValue(cards[i].getValue().getValue()));
+				this.cards[i] = new PokerCard(cards[i].getSuit(),
+						new PokerValue(cards[i].getValue().getValue()));
 			}
 		}
 		Arrays.sort(this.cards);
@@ -38,7 +40,7 @@ public class PokerHand implements Comparable<PokerHand>{
 	}
 
 	public String getCombination() {
-		if (this.combination.equals("unknown")){
+		if (this.combination.equals("unknown")) {
 			this.combination = PokerHandHelper.getPokerHandCombination(this);
 		}
 		return this.combination;
@@ -46,7 +48,9 @@ public class PokerHand implements Comparable<PokerHand>{
 
 	@Override
 	public int compareTo(PokerHand ph) {
-		int compareValue = PokerHandHelper.getPokerHandCombinationPosition(this) - PokerHandHelper.getPokerHandCombinationPosition(ph); 
+		int compareValue = PokerHandHelper
+				.getPokerHandCombinationPosition(this)
+				- PokerHandHelper.getPokerHandCombinationPosition(ph);
 		if (compareValue != 0) {
 			return compareValue;
 		}
@@ -55,8 +59,10 @@ public class PokerHand implements Comparable<PokerHand>{
 			res = PokerHandHelper.samePokerHandCombinationComparison(this, ph);
 		} catch (PokerHandComparisonNotSameCombinationException e) {
 			e.printStackTrace();
+		} catch (PokerValueNotValidException e) {
+			e.printStackTrace();
 		}
 		return res;
 	}
-	
+
 }
