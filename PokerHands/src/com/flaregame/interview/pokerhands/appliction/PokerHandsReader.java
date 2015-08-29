@@ -52,7 +52,8 @@ public class PokerHandsReader {
 		PokerCard cards[] = new PokerCard[5];
 		NodeList pokerHandList = doc.getElementsByTagName("pokerHand");
 		for (int i = 0; i < pokerHandList.getLength(); i++) {
-			Element hand = (Element) pokerHandList.item(i);
+			Element hand = (Element) (pokerHandList.item(i));
+			String name = hand.getAttribute("name");
 			NodeList pokerCards = hand.getElementsByTagName("pokerCard");
 			if (pokerCards.getLength() != 5) {
 				System.out.println("Wrong input file");
@@ -66,9 +67,10 @@ public class PokerHandsReader {
 				cards[j] = new PokerCard(getPokerSuit(suitStr), valueStr);
 						
 			}
-			res.addPokerHand(new PokerHand(cards));
+			PokerHand handToAdd = new PokerHand(cards);
+			handToAdd.setName(name);
+			res.addPokerHand(handToAdd);
 		}
-		System.out.println(res.getPokerHands().size() + " pokerhands read!");
 		return res;
 	}
 

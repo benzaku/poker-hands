@@ -1,90 +1,90 @@
 <?xml version="1.0"?>
 <pokerHands>
-	<pokerHand>
+	<pokerHand name="John">
 		<pokerCard suit="DIAMONDS" value="3" />
 		<pokerCard suit="HEART" value="A" />
 		<pokerCard suit="DIAMONDS" value="K" />
 		<pokerCard suit="CLUB" value="J" />
 		<pokerCard suit="SPADE" value="10" />
 	</pokerHand>
-	<pokerHand>
+	<pokerHand name="Tony">
 		<pokerCard suit="HEART" value="3" />
 		<pokerCard suit="HEART" value="A" />
 		<pokerCard suit="HEART" value="2" />
 		<pokerCard suit="HEART" value="9" />
 		<pokerCard suit="HEART" value="10" />
 	</pokerHand>
-	<pokerHand>
+	<pokerHand name="Mary">
 		<pokerCard suit="DIAMONDS" value="3" />
 		<pokerCard suit="HEART" value="3" />
 		<pokerCard suit="DIAMONDS" value="K" />
 		<pokerCard suit="CLUB" value="J" />
 		<pokerCard suit="SPADE" value="10" />
 	</pokerHand>
-	<pokerHand>
+	<pokerHand name="Tobias">
 		<pokerCard suit="HEART" value="A" />
 		<pokerCard suit="HEART" value="A" />
 		<pokerCard suit="DIAMONDS" value="2" />
 		<pokerCard suit="CLUB" value="J" />
 		<pokerCard suit="SPADE" value="3" />
 	</pokerHand>
-	<pokerHand>
+	<pokerHand name="Henry">
 		<pokerCard suit="CLUB" value="10" />
 		<pokerCard suit="HEART" value="10" />
 		<pokerCard suit="DIAMONDS" value="K" />
 		<pokerCard suit="CLUB" value="J" />
 		<pokerCard suit="SPADE" value="10" />
 	</pokerHand>
-	<pokerHand>
+	<pokerHand name="Mike">
 		<pokerCard suit="CLUB" value="2" />
 		<pokerCard suit="HEART" value="3" />
 		<pokerCard suit="DIAMONDS" value="4" />
 		<pokerCard suit="CLUB" value="5" />
 		<pokerCard suit="SPADE" value="6" />
 	</pokerHand>
-	<pokerHand>
+	<pokerHand name="Andy">
 		<pokerCard suit="DIAMONDS" value="10" />
 		<pokerCard suit="HEART" value="J" />
 		<pokerCard suit="DIAMONDS" value="J" />
 		<pokerCard suit="CLUB" value="J" />
 		<pokerCard suit="SPADE" value="10" />
 	</pokerHand>
-	<pokerHand>
+	<pokerHand name="Eason">
 		<pokerCard suit="HEART" value="3" />
 		<pokerCard suit="HEART" value="J" />
 		<pokerCard suit="DIAMONDS" value="J" />
 		<pokerCard suit="CLUB" value="J" />
 		<pokerCard suit="SPADE" value="J" />
 	</pokerHand>
-	<pokerHand>
+	<pokerHand name="Natasha">
 		<pokerCard suit="SPADE" value="A" />
 		<pokerCard suit="SPADE" value="K" />
 		<pokerCard suit="SPADE" value="Q" />
 		<pokerCard suit="SPADE" value="J" />
 		<pokerCard suit="SPADE" value="10" />
 	</pokerHand>
-	<pokerHand>
+	<pokerHand name="Jackie">
 		<pokerCard suit="SPADE" value="A" />
 		<pokerCard suit="SPADE" value="K" />
 		<pokerCard suit="SPADE" value="Q" />
 		<pokerCard suit="SPADE" value="J" />
 		<pokerCard suit="SPADE" value="10" />
 	</pokerHand>
-	<pokerHand>
+	<pokerHand name="Lisa">
 		<pokerCard suit="DIAMONDS" value="3" />
 		<pokerCard suit="HEART" value="A" />
 		<pokerCard suit="DIAMONDS" value="2" />
 		<pokerCard suit="CLUB" value="6" />
 		<pokerCard suit="SPADE" value="10" />
 	</pokerHand>
-	<pokerHand>
+	<pokerHand name="Amanda">
 		<pokerCard suit="DIAMONDS" value="A" />
 		<pokerCard suit="HEART" value="A" />
 		<pokerCard suit="DIAMONDS" value="K" />
 		<pokerCard suit="CLUB" value="K" />
 		<pokerCard suit="SPADE" value="10" />
 	</pokerHand>
-	<pokerHand>
+	<pokerHand name="Emily">
 		<pokerCard suit="DIAMONDS" value="2" />
 		<pokerCard suit="HEART" value="A" />
 		<pokerCard suit="DIAMONDS" value="2" />

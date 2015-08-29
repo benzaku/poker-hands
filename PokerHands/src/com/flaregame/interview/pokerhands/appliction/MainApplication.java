@@ -10,7 +10,6 @@ public class MainApplication {
 			return;
 		}
 		String inputFileName = args[0];
-		System.out.println("Input file: " + inputFileName);
 
 		PokerHandsReader reader = new PokerHandsReader();
 		reader.parsePokerHandsInputFile(inputFileName);
